@@ -3,18 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/src/java/vgb/controller/LoginServlet.java</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/web/index.jsp</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/web/login.jsp</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/web/WEB-INF/views/register_ok.jsp</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/src/java/vgb/web/VisitorsCounterListener.java</file>
             <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/web/products_list.jsp</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/src/java/vgb/controller/RegisterServlet.java</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/web/WEB-INF/views/login_ok.jsp</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/web/register.jsp</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/src/java/vgb/view/HelloServlet.java</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/src/java/vgb/web/CharSetFilter.java</file>
-            <file>file:/C:/OCPJPWCD/Teacher/ch17/VeryGoodBook/src/java/vgb/web/PerformanceFilter.java</file>
         </group>
     </open-files>
 </project-private>

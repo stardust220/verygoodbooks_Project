@@ -70,7 +70,7 @@ public final class products_005flist_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <script>\n");
       out.write("            function helloHandler(){\n");
       out.write("                alert(\"Hello!\");\n");
-      out.write("            }\n");
+      out.write("           \n");
       out.write("//            function addCartHandler(bid){\n");
       out.write("//                alert(\"已放入購物車: No.\" + bid);\n");
       out.write("//            }\n");
@@ -87,6 +87,7 @@ public final class products_005flist_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                $('.choice').text( $(this).val() + ' stars' );\n");
       out.write("              } \n");
       out.write("            );\n");
+      out.write("     }\n");
       out.write("        </script>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
