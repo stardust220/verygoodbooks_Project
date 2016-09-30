@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- web-app metadata-complete="false" -->
+<web-app metadata-complete="false" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <listener>
+        <description>HttpSessionListener</description>
+        <listener-class>vgb.web.VisitorsCounterListener</listener-class>
+    </listener>
+    <servlet>
+        <description>用來產生Login Form需要的驗證碼圖片</description>
+        <servlet-name>ImageCheckServlet</servlet-name>
+        <servlet-class>vgb.view.ImageCheckServlet</servlet-class>
+        <init-param>
+            <param-name>length</param-name>
+            <param-value>4</param-value>
+        </init-param>
+        <init-param>
+            <param-name>style</param-name>
+            <param-value>ITALIC</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageCheckServlet</servlet-name>
+        <url-pattern>/images/check.jpg</url-pattern>
+        <url-pattern>/images/Check.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>用來產生Register Form需要的驗證碼圖片</description>
+        <servlet-name>RegisterImageCheckServlet</servlet-name>
+        <servlet-class>vgb.view.ImageCheckServlet</servlet-class>
+        <init-param>
+            <param-name>length</param-name>
+            <param-value>6</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterImageCheckServlet</servlet-name>
+        <url-pattern>/images/register_check.jpg</url-pattern>
+        <url-pattern>/images/RegisterCheck.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HelloJSP</servlet-name>
+        <jsp-file>/hello.jsp</jsp-file>
+        <init-param>
+            <param-name>greeting</param-name>
+            <param-value>你好</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloJSP</servlet-name>
+        <url-pattern>/hello.jsp</url-pattern>
+        <url-pattern>/hello.asp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ProductsListJSP</servlet-name>
+        <jsp-file>/products_list.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductsListJSP</servlet-name>
+        <url-pattern>/products_list.jsp</url-pattern>
+        <url-pattern>/products_list.html</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>

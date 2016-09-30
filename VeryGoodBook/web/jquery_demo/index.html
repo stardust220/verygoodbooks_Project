@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+http://i-00/OCPJWCD/%E8%AA%B2%E7%A8%8B%E7%B7%B4%E7%BF%92/mod07/P7_13.html
+http://i-00/OCPJWCD
+-->
+<html>
+    <head>
+        <title>jQuery Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../js/jquery.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var data = "Hi!";
+            
+            window.alert(window.data + $("#userid").val() + "\n" + location.protocol);
+            alert(navigator.appName + "\n" + window.navigator.appVersion);
+            
+            $(document).ready(readyHander);
+            
+            function readyHander(){
+                alert("Document Ready: " + $("#userid").val());
+            }            
+            
+            function checkIdHandler(){
+                var idStr = $("#userid").val();                
+                if(idStr.length==10){                    
+                    $("#result").text("正確");
+                }else{
+                    $("#result").text("錯誤");
+                }
+            }
+            
+            function googleHandler(){
+                location.href="http://www.google.com";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>jQuery Demo</h1>
+        <hr>
+        <a href="../">首頁</a>        
+        <hr>
+        <label for="userid">身分證號</label>
+        <input id="userid" value="A123456789">
+        <button onclick="checkIdHandler()">檢查</button>
+        <span id="result"></span>
+        <hr>
+        <button onclick="googleHandler()">Google</button>
+    </body>
+</html>

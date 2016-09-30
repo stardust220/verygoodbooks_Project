@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input{width:40ex}
+        </style>
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>
+            $(document).on("click", "#geocoder_button", geocoderHandler);
+            $(document).on("click", "#address_button", addressHandler);
+             
+            
+            $(document).ready(readyHandler);
+            
+            function readyHandler(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+            }
+            
+            function showPosition(position){
+                $("#lat_field").val(position.coords.latitude);
+                $("#lng_field").val(position.coords.longitude);
+            }
+
+            function geocoderHandler() {
+                //alert("geocoder, " + $("#address_field").val());
+                $.ajax(
+                        {
+                            url: "http://maps.googleapis.com/maps/api/geocode/json?address=" + $("#address_field").val()
+                        }
+                ).done(doneHandler);
+            }
+
+            function addressHandler() {
+                var query = $("#lat_field").val() + "," + $("#lng_field").val();
+                //alert("geocoder, " + query);
+                $.ajax(
+                        {
+                            url: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + query
+                        }
+                ).done(doneHandler);
+            }
+
+            function doneHandler(json) {
+                if (json.results[0]) {
+//                alert(json.results[0].geometry.location.lat + "," 
+//                +json.results[0].geometry.location.lng + ","
+//                +json.results[0].formatted_address);
+                    $("#address_field").val(json.results[0].formatted_address);
+                    $("#lat_field").val(json.results[0].geometry.location.lat);
+                    $("#lng_field").val(json.results[0].geometry.location.lng);
+                }else{
+                    alert(json.status);
+                    $("#address_field").val("");
+                    $("#lat_field").val("");
+                    $("#lng_field").val("");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="address_field" placeholder="請輸入地址">
+        <input type="button" value="查詢經緯度" id="geocoder_button">
+        <hr>
+        <input type="text" id="lat_field" placeholder="請輸入緯度">
+        <input type="text" id="lng_field" placeholder="請輸入經度">
+        <input type="button" value="查詢地址" id="address_button">
+    </body>
+</html>
